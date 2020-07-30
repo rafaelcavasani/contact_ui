@@ -1,0 +1,13 @@
+@import "../../node_modules/antd/dist/antd.css";
+
+.container {
+  width: 80%;
+  margin: 2em auto;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin: 1em auto;
+  font-size: 1.5em;
+}
