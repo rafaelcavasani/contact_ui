@@ -155,9 +155,12 @@ export default function ContactForm({
   }
 
   async function handleContactDelete(key) {
-    const deletedPhones = phoneList.find((item) => item.key === key);
-    if (deletedPhones && deletedPhones.id) {
-      setDeletedPhones([...deletedPhones, { id: deletedPhones.id.toString() }]);
+    const deletedPhones_ = phoneList.find((item) => item.key === key);
+    if (deletedPhones_ && deletedPhones_.id) {
+      setDeletedPhones([
+        ...deletedPhones,
+        { id: deletedPhones_.id.toString() },
+      ]);
     }
     const newPhones = phoneList.filter((item) => item.key !== key);
     if (newPhones && newPhones.length > 0) {
@@ -167,7 +170,7 @@ export default function ContactForm({
         key: index,
       }));
       setPhoneList(phonesNewKeys);
-      const newModifiedPhones = newPhones.map((item) => item.name);
+      const newModifiedPhones = newPhones.map((item) => item.number);
       try {
         const values = await form.getFieldsValue();
         values.phones = newModifiedPhones;

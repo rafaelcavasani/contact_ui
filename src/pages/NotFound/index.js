@@ -1,6 +1,21 @@
-import React, { useState } from "react";
-import {} from "antd";
+import React from "react";
+import { Result, Button } from "antd";
+import history from "../../services/history";
 
 export default function HomePage() {
-  return <h2>Página não encontrada</h2>;
+  function handleClick() {
+    history.push("/");
+  }
+  return (
+    <Result
+      status="404"
+      title="404"
+      subTitle="Página não encontrada."
+      extra={
+        <Button type="primary" onClick={handleClick}>
+          Início
+        </Button>
+      }
+    />
+  );
 }
