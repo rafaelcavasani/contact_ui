@@ -11,7 +11,7 @@ export default function Routes() {
     <Switch>
       <Route path="/" exact component={ContactPage} />
       <Route path="/contacts/create" exact component={ContactCreatePage} />
-      <Route path="/contacts/edit:id" exact component={ContactEditPage} />
+      <Route path="/contacts/edit/:id" exact component={ContactEditPage} />
       <Route path="*" component={NotFoundPage} />
     </Switch>
   );

@@ -21,7 +21,7 @@ export default function ContactEditPage({ match }) {
       {!loading ? (
         <ContactForm
           id={id}
-          agreement={result}
+          contact={result}
           loading={loading}
           cardTitle="EDITAR CONTATO"
           onRefetch={handleRefetch}

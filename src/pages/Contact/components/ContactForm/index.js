@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { Card, Form, Row, Col, Input, Button, Modal } from "antd";
+import { Card, Form, Row, Col, Input, Button, Modal, Space } from "antd";
 import {
   CloseOutlined,
   CheckOutlined,
@@ -205,10 +205,10 @@ export default function ContactForm({
         okText: "Não",
         cancelText: "Sim",
         onCancel: () => {
-          history.push("/contacts");
+          history.push("/");
         },
       });
-    } else history.push("/contacts");
+    } else history.push("/");
   }
 
   return (
@@ -226,7 +226,12 @@ export default function ContactForm({
       {modified && (
         <Form form={form} layout="vertical" onFinish={handleSubmit}>
           <Row>
-            <Col span={18}>
+            <Col
+              lg={{ span: 18 }}
+              md={{ span: 18 }}
+              sm={{ span: 24 }}
+              xs={{ span: 24 }}
+            >
               <Form.Item
                 label="NOME"
                 name="name"
@@ -237,7 +242,12 @@ export default function ContactForm({
                 <Input placeholder="Nome do contato" onChange={handleChange} />
               </Form.Item>
             </Col>
-            <Col span={6}>
+            <Col
+              lg={{ span: 6 }}
+              md={{ span: 6 }}
+              sm={{ span: 24 }}
+              xs={{ span: 24 }}
+            >
               <Form.Item
                 label="IDADE"
                 name="age"
@@ -245,7 +255,11 @@ export default function ContactForm({
                   { required: true, message: "Este campo é obrigatório" },
                 ]}
               >
-                <Input placeholder="Idade do contato" onChange={handleChange} />
+                <Input
+                  placeholder="Idade do contato"
+                  onChange={handleChange}
+                  type={"number"}
+                />
               </Form.Item>
             </Col>
           </Row>
@@ -312,7 +326,13 @@ export default function ContactForm({
 
           <Row>&nbsp;</Row>
           <Row>
-            <Col span={4} offset={16}>
+            <Col
+              lg={{ span: 6, offset: 12 }}
+              md={{ span: 6, offset: 12 }}
+              sm={{ span: 12, offset: 0 }}
+              xs={{ span: 12, offset: 0 }}
+              flex="auto"
+            >
               <Form.Item>
                 <Button block onClick={handleCancel}>
                   <CloseOutlined />
@@ -320,7 +340,12 @@ export default function ContactForm({
                 </Button>
               </Form.Item>
             </Col>
-            <Col flex="auto">
+            <Col
+              lg={{ span: 6 }}
+              md={{ span: 6 }}
+              sm={{ span: 12 }}
+              xs={{ span: 12 }}
+            >
               <Form.Item>
                 <Button
                   block

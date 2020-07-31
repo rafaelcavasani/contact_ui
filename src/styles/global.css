@@ -2,7 +2,7 @@
 
 .container {
   width: 80%;
-  margin: 2em auto;
+  margin: 3em auto;
 }
 
 .header {
@@ -10,4 +10,8 @@
   text-align: center;
   margin: 1em auto;
   font-size: 1.5em;
+}
+
+.ant-col {
+  padding: 0 5px;
 }

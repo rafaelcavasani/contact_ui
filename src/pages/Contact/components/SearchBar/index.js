@@ -16,7 +16,12 @@ export default function SearchBar({ handleContactSearch }) {
     <>
       <Form form={form}>
         <Row>
-          <Col span={14}>
+          <Col
+            lg={{ span: 14 }}
+            md={{ span: 14 }}
+            sm={{ span: 24 }}
+            xs={{ span: 24 }}
+          >
             <Form.Item name="contactFilter">
               <Search
                 placeholder="Buscar contato pelo nome ou telefone..."
@@ -26,7 +31,12 @@ export default function SearchBar({ handleContactSearch }) {
               />
             </Form.Item>
           </Col>
-          <Col span={6} offset={4}>
+          <Col
+            lg={{ span: 6, offset: 4 }}
+            md={{ span: 8, offset: 2 }}
+            sm={{ span: 24 }}
+            xs={{ span: 24 }}
+          >
             <Form.Item>
               <Button type="primary" onClick={handleContactCreation} block>
                 <PlusOutlined />
